@@ -1,0 +1,256 @@
+* {
+    box-sizing: border-box;
+}
+
+/* ----------------------------------------------------------------------------------- */
+/* 메인 */
+
+/* 마이페이지 */
+.mypage {
+    background-color: #B38CE7;
+    float: left;
+    width: 25%;
+    height: 100vh;
+    padding: 100px 50px;
+    text-align: center;
+}
+
+/* 프로필 이미지 */
+.myProfilImg {
+    background-image: url('../img/mood_1.png');
+    background-position: center;
+    background-size: 130%;
+    background-color: rgb(184, 230, 248);
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    margin: 50px;
+    border-radius: 50%;
+    border: 10px solid white;
+    box-shadow: 3px 3px 5px 3px rgba(0, 0, 0, 0.452);
+}
+
+/* ------------------------------------------------------------------------------------------ */
+/* 카운트 */
+.count-box {
+    background-color: #F2E9FF;
+    margin: auto;
+    width: 280px;
+    padding: 40px 50px 20px 50px;
+    border-radius: 20px;
+}
+
+/* 무드 이미지 카운트 */
+.mood-box {
+    margin: 10px auto;
+    width: 100px;
+    height: 60px;
+    line-height: 60px;
+}
+
+.mood_1, .mood_2, .mood_3,
+.mood_4,
+.mood_5 {
+    float: left;
+    width: 60px;
+    height: 60px;
+    /* background-color: #B38CE7; */
+}
+
+.mood_1 {
+    background-image: url('../img/mood_1.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.mood_2 {
+    background-image: url('../img/mood_2.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.mood_3 {
+    background-image: url('../img/mood_3.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.mood_4 {
+    background-image: url('../img/mood_4.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.mood_5 {
+    background-image: url('../img/mood_5.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.mood-box p {
+    text-align: right;
+    font-size: 1.2rem;
+}
+
+/* ------------------------------------------------------------------------------------------ */
+/* 달력 */
+.calendar-box {
+    background-color: #F2E9FF;
+    display: inline-block;
+    width: 75%;
+    height: 100vh;
+    padding: 60px 180px;
+    overflow: scroll;
+    position: relative;
+}
+
+.writeBtn-box {
+    position: absolute;
+    left: 85%;
+    bottom: 10%;
+    z-index: 2;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+
+/* ------------------------------------------------------------------------------------------ */
+/* 일기쓰기 전체박스*/
+.write-container {
+    background-color: #F2E9FF;
+    display: inline-block;
+    width: 75%;
+    height: 100vh;
+    padding: 120px 200px;
+}
+
+/* 상단 오늘 날짜 */
+.write-today {
+    vertical-align: middle;
+    background-color: #9747FF;
+    padding: 15px 10px;
+    color: white;
+    box-shadow: 3px 3px 10px 2px gray;
+}
+
+/* 글쓰기 박스 */
+.write-box {
+    width: 100%;
+    display: inline-block;
+    padding: 8px;
+    background-color: white;
+    border: 3px solid #9747FF;
+    box-shadow: 3px 3px 10px 2px gray;
+}
+
+/* 기분이미지 --------------------------------------*/
+.write-box .write-mood {
+    height: 80px;
+    line-height: 74px;
+    background-color: white;
+    border-radius: 10px;
+    border: 3px solid #F2E9FF;
+    font-size: 20px;
+}
+
+.mood-title {
+    float: left;
+    padding: 0px 60px;
+    background-color: #F2E9FF;
+}
+
+.mood-img {
+    margin-left: 65px;
+    width: 65px;
+    height: 65px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+/* 내용 작성 ----------------------------------------------*/
+.write-content {
+    width: 100%;
+    height: 400px;
+    padding: 20px;
+    margin: 5px 0px;
+    border-radius: 10px;
+    border: 3px solid #F2E9FF;
+}
+
+.write-content:focus {
+    background-color: #F2E9FF;
+    outline: none;
+}
+
+/* 일기 본문placeholder 값 설정 */
+.write-content::placeholder {
+    font-size: 18px;
+    color: gray;
+}
+
+/* 파일첨부 */
+.write-footer {
+    height: 60px;
+    line-height: 54px;
+    padding: 0px 10px;
+    border-radius: 10px;
+    border: 3px solid #F2E9FF;
+}
+
+.fileBox {
+    font-family: 'OSeongandHanEum';
+    font-size: 16px;
+    font-weight: bold;
+    color: #666666;
+}
+
+.write-footer .fileBox::-webkit-file-upload-button {
+    font-family: 'OSeongandHanEum';
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px 20px;
+    border-radius: 5px;
+    background-color: #9747FF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* 작성버튼 */
+.submit-write {
+    width: 100px;
+    height: 35px;
+    vertical-align: middle;
+    border-radius: 50px;
+    transition: all .1s ease;
+    border: none;
+    background-color: #F2E9FF;
+    font-family: 'OSeongandHanEum';
+    font-size: 16px;
+    font-weight: bold;
+    color: #9747FF;
+    margin: 15px 0px 8px 0px;
+    padding: 5px 15px;
+    float: right;
+    cursor: pointer;
+}
+
+.submit-write::after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+.submit-write:hover {
+    background-color: #9747FF;
+    border: none;
+    box-shadow: 0px 0px 5px 3px #B38CE7;
+    color: white;
+}
+
+@media (max-width: 1920px) {
+    .write-container {
+        width: 75%;
+    }
+}

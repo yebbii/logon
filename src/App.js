@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import LogonMain from "./diary/LogonMain";
+import * as React from 'react'
+import { Reset } from 'styled-reset'
+import { Route } from "react-router-dom";
+import LogonWrite from "./diary/LogonWrite";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <React.Fragment>
+        <Reset />
+      </React.Fragment>
+
+      <Route path='/comon/logon' component={(props) => <LogonMain {...props}  />} exact={true} />
+      <Route path='/comon/logon/write' component={ (props) => <LogonWrite {...props}  /> } exact={true} />
+    </>
   );
 }
 

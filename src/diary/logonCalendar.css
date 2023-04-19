@@ -1,0 +1,130 @@
+* { box-sizing: border-box; }
+/* 월, 년도 */
+.fc-toolbar-title {
+    color: white;
+    text-shadow: -1px 0px #7513C2, 0px 1px #7513C2, 1px 0px #7513C2, 0px -1px #7513C2;
+}
+/* 투데이  버튼 */
+.fc-today-button .fc-button-primary:disabled {
+    width: 100px;
+    height: 50px;
+    box-sizing: border-box; 
+    margin: 10px;
+    border-radius: 10px !important;
+    background-color: #9747FF;
+    border: 2px solid #9747FF;
+}
+.fc .fc-button:disabled {
+    opacity: 1;
+}
+/* 다음달 이전달 qjxms */
+.fc-prev-button .fc-next-button {
+    box-sizing: border-box; 
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    border-radius: 10px !important;
+    background-color: #7513C2;
+    border: 2px solid #7513C2;
+}
+/* .fc .fc-button-primary:hover, .fc .fc-button-primary:disabled:hover {
+    background-color: white;
+    border: 2px solid #7513C2;
+    color: #7513C2;
+} */
+
+/* 요일 */
+.fc-col-header {
+    background-color: #7513C2;
+    border-style: none;
+    color: white;
+}
+.fc-col-header-cell-cushion {
+    color: white;
+}
+/* 일요일 날짜: 빨간색 */
+.fc-day-sun a {
+    color: red;
+}
+  
+/* 토요일 날짜: 파란색 */
+.fc-day-sat a {
+    color: gray;
+}
+
+/* 캘린더 그리드 */
+.fc .fc-scrollgrid-liquid{
+    border: 2px solid #9747FF;
+    border-collapse: collapse;
+}
+.fc-theme-standard th {
+    background-color: #9747FF;
+    height: 50px;
+    line-height: 50px;
+    border: none;
+}
+.fc-theme-standard td {
+    background-color: white;
+    border: 2px dashed #9747FF;
+}
+
+
+
+/* 무드이미지 */
+.fc .fc-day .fc-daygrid-day-events {
+    /* background-color: skyblue; */
+    height: 100px;
+}
+.fc .fc-event {
+    /* background-color: #7513C2; */
+    width: 110px;
+    height: 110px;
+}
+.fc .fc-event .mood_detail {
+    width: 100%;
+    height: 100%;
+}
+/* 이미지 가운데 정렬*/
+.fc .fc-daygrid-event-harness {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+}
+
+/* 풀캘린더 */
+:root {
+    --fc-small-font-size: .85em;
+    --fc-page-bg-color: #fff;
+    --fc-neutral-bg-color: rgba(208, 208, 208, 0.3);
+    --fc-neutral-text-color: #808080;
+    --fc-border-color: #ddd;
+  
+    --fc-button-text-color: #fff;
+    --fc-button-bg-color: #9747FF;
+    --fc-button-border-color: #9747FF;
+    --fc-button-hover-bg-color: #9747FF;
+    --fc-button-hover-border-color: #9747FF;
+    --fc-button-active-bg-color: #9747FF;
+    --fc-button-active-border-color: #9747FF;
+  
+    --fc-event-bg-color: none;
+    --fc-event-border-color: none;
+    --fc-event-text-color: #fff;
+    --fc-event-selected-overlay-color: rgba(0, 0, 0, 1);
+  
+    --fc-more-link-bg-color: #d0d0d0;
+    --fc-more-link-text-color: inherit;
+  
+    --fc-event-resizer-thickness: 100%;
+    --fc-event-resizer-dot-total-width: 100%;
+    --fc-event-resizer-dot-border-width: none;
+  
+    --fc-non-business-color: rgba(215, 215, 215, 0.3);
+    --fc-bg-event-color: rgb(143, 223, 130);
+    --fc-bg-event-opacity: 1;
+    --fc-highlight-color: rgba(188, 232, 241, 0.3);
+    --fc-today-bg-color: rgba(255, 220, 40, 0.15);
+    --fc-now-indicator-color: red;
+  }
+
