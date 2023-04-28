@@ -1,17 +1,30 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import LogonMypage from "./LogonMypage";
-
 import './logonMain.css';
+// import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
-const LogonWrite = ({history}) => {
-    const [mood, setMood] = useState([{"moodId":1},{"moodId":2},{"moodId":3},{"moodId":4},{"moodId":5}]);
+
+const LogonWrite = ({ history }) => {
+    const [mood, setMood] = useState([{ "moodId": 1 }, { "moodId": 2 }, { "moodId": 3 }, { "moodId": 4 }, { "moodId": 5 }]);
     const [moodActive, setMoodActive] = useState(1);
     const [imgBase64, setImgBase64] = useState([]);
     const [imgBase, setImgBase] = useState([1]);
     const [imgFile, setImgFile] = useState([]);
     const [contents, setContents] = useState('');
+    const [day, setDay] = useState('');
     
+    const formatDate = (date) => {
+        if (!date) {
+            return null;
+        }
+        const day = ('0' + date.getDate()).slice(-2);
+        return `${day}`;
+    };
+
+    const today = formatDate(new Date());
+    console.log(today);
+
     const diaryDto = {
         moodId: moodActive,
         diaryContent: contents
@@ -26,10 +39,10 @@ const LogonWrite = ({history}) => {
                     <img className="mood-img"
                         key={mood[i].moodId}
                         src={mood[i].moodId == moodActive
-                        ? `/img/moodC_${mood[i].moodId}.png`
-                        : `/img/mood_${mood[i].moodId}.png`}
-                    onClick={toggleMoodActive}
-                    alt={mood[i].moodId} />
+                            ? `/img/moodC_${mood[i].moodId}.png`
+                            : `/img/mood_${mood[i].moodId}.png`}
+                        onClick={toggleMoodActive}
+                        alt={mood[i].moodId} />
                 </>
             );
         } return result;
@@ -113,7 +126,7 @@ const LogonWrite = ({history}) => {
                 console.log(response);
                 if (response.data.count === 1) {
                     alert(`정상적으로 등록되었습니다.`);
-                    history.push('/comon/logon');
+                    history.push('/');
                 };
             })
             .catch(error => {
@@ -122,35 +135,38 @@ const LogonWrite = ({history}) => {
             })
     }
 
+
+
     return (
         <>
             <LogonMypage />
             <div className="write-container">
-                <div className="write-today">
-                    <p>Day</p>
-                </div>
-                <form onSubmit={onSubmit}>
-                    <div className="write-box">
-                        <div className="write-mood">
-                            <div className="mood-title">오늘의 기분은?</div>
-                            {moodList()}
-                        </div>
-                    
-
-                        <textarea className="write-content"
-                            placeholder="오늘을 Log: On 해주세요:)"
-                            value={contents}
-                            onChange={changeContents}>
-                    
-                        </textarea>
-
-                        <div className="write-footer">
-                            <input className="fileBox" type='file' id='file' onChange={handleChangeFile} />
-                        </div>
-
-                        <input className='submit-write' type='submit' value='하루기록' />
+                <div id='writeback-box'>
+                    <div className="write-today">
+                        <p>Day{today}</p>
                     </div>
-                </form>
+                    <form onSubmit={onSubmit}>
+                        <div className="write-box">
+                            <div className="write-mood">
+                                <div className="mood-title">오늘의 기분은?</div>
+                                {moodList()}
+                            </div>
+
+
+                            <textarea className="write-content"
+                                placeholder="오늘을 Log 해주세요:)"
+                                value={contents}
+                                onChange={changeContents}>
+                            </textarea>
+
+                            <div className="write-footer">
+                                <input className="fileBox" type='file' id='file' onChange={handleChangeFile} />
+                            </div>
+
+                            <input className='submit-write' type='submit' value='하루기록' />
+                        </div>
+                    </form>
+                </div>
             </div>
         </>
     );
