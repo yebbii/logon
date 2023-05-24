@@ -1,0 +1,692 @@
+/* 일기내용 */
+@font-face {
+  font-family: 'KyoboHand';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/KyoboHand.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 제목 */
+@font-face {
+  font-family: 'SBAggroB';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 카운트 */
+@font-face {
+  font-family: 'insungitCutelivelyjisu';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/insungitCutelivelyjisu.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 버튼 */
+@font-face {
+  font-family: 'NanumSquareNeo-Variable';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ----------------------------------------------------------------------------------- */
+/* 메인 */
+#my-container {
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* 마이페이지 */
+.mypage {
+  background-color: #B38CE7;
+  float: left;
+  width: 25%;
+  height: 100vh;
+  padding: 80px 50px;
+  text-align: center;
+  background-image: url('../img/logon-bg2.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.editname {
+  font-family: 'SBAggroB';
+  font-size: 25px;
+  color: #ffffff;
+  text-align: center;
+  height: 40px;
+  width: 150px;
+  border: none;
+  outline-style: none;
+  background-color: transparent;
+  border-bottom: 2px solid white;
+  -webkit-text-stroke: 1.5px #7513C2;
+  vertical-align: top;
+
+}
+
+.infoTip-box {
+  display: inline-block;
+  width: 20px;
+  height: 40px;
+  line-height: 40px;
+  margin-right: 10px;
+}
+
+#name-infoTip {
+  background-position: cover;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  /* fill: #7c2ce4; */
+  stroke-width: 2px;
+  vertical-align: bottom;
+}
+
+.my-title {
+  font-family: 'insungitCutelivelyjisu';
+  font-size: 20px;
+  text-align: 40px;
+  height: 40px;
+  display: inline-block;
+  line-height: 40px;
+  /* border: 1px solid red; */
+  vertical-align: top;
+
+}
+
+
+/* 프로필 이미지 */
+.myProfilImg {
+  background-image: url('../img/mood_profil.png');
+  background-position: center;
+  background-size: 105%;
+  background-color: rgb(120, 4, 197);
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  margin: 30px 50px;
+  border-radius: 50%;
+  border: 10px solid white;
+  box-shadow: 3px 3px 5px 3px rgba(0, 0, 0, 0.452);
+}
+
+/* ------------------------------------------------------------------------------------------ */
+/* 카운트 */
+.count-box {
+  background-color: #F2E9FF;
+  margin: 30px auto;
+  width: 280px;
+  padding: 40px 50px 20px 50px;
+  border-radius: 20px;
+  font-family: 'insungitCutelivelyjisu';
+}
+
+.count-box h1 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.count-box .total-count {
+  margin: auto;
+  padding-bottom: 5px;
+  width: 20%;
+  border-bottom: 2px solid #a5c9fc;
+}
+
+/* 무드 이미지 카운트 */
+.mood-box {
+  margin: 10px auto;
+  width: 100px;
+  height: 60px;
+  line-height: 60px;
+}
+
+.mood-box .mood_1,
+.mood_2,
+.mood_3,
+.mood_4,
+.mood_5 {
+  float: left;
+  width: 60px;
+  height: 60px;
+}
+
+.mood_1 {
+  background-image: url('../img/mood_1.png');
+  background-position: center;
+  background-size: cover;
+}
+
+.mood_2 {
+  background-image: url('../img/mood_2.png');
+  background-position: center;
+  background-size: cover;
+}
+
+.mood_3 {
+  background-image: url('../img/mood_3.png');
+  background-position: center;
+  background-size: cover;
+}
+
+.mood_4 {
+  background-image: url('../img/mood_4.png');
+  background-position: center;
+  background-size: cover;
+}
+
+.mood_5 {
+  background-image: url('../img/mood_5.png');
+  background-position: center;
+  background-size: cover;
+}
+
+.mood-box p {
+  text-align: right;
+  font-size: 1.2rem;
+}
+
+/* ------------------------------------------------------------------------------------------ */
+/* 달력 */
+.calendar-box {
+  background-color: #F2E9FF;
+  display: inline-block;
+  width: 75%;
+  height: 100vh;
+  padding: 80px 0px;
+  overflow-y: scroll;
+  position: relative;
+  background-image: url(../img/logon-bg1.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.calendar {
+  margin: 0px 150px;
+}
+
+/* 스크롤바css */
+.calendar-box::-webkit-scrollbar {
+  width: 5px;
+}
+
+.calendar-box::-webkit-scrollbar-thumb {
+  background-color: #B38CE7;
+  border-radius: 5px;
+  transition: width 0.2s ease-in-out;
+}
+
+.calendar-box::-webkit-scrollbar-thumb:hover {
+  background-color: #a5c9fc;
+}
+
+/* 기록하기 버튼 */
+.writeBtn-box {
+  position: sticky;
+  left: 91%;
+  bottom: 20%;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  z-index: 2;
+  background-color: black;
+  background-image: url('../img/logon-write-05.png');
+  background-position: 50% 30%;
+  background-repeat: no-repeat;
+  background-size: 85%;
+  border: none;
+  box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  animation: huerotator 3s infinite alternate;
+}
+
+@keyframes huerotator {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.writeBtn-box:hover {
+  background-color: #B38CE7;
+  border-color: #B38CE7;
+  box-shadow: 0px 0px 5px 3px #B38CE7;
+  color: #7513C2;
+  animation-play-state: paused;
+}
+
+.write-btn {
+  width: 35px;
+  height: 35px;
+  color: black;
+}
+
+/* 
+.writetext {
+  font-family: 'NanumSquareNeo-Variable';
+  font-size: 15px;
+  font-weight: bold;
+  height: 35px;
+  line-height: 40px;
+  margin-left: 10px;
+  display: inline-block;
+} */
+
+/* ------------------------------------------------------------------------------------------ */
+/* 일기쓰기 전체박스*/
+.write-container {
+  background-color: #F2E9FF;
+  display: inline-block;
+  width: 75%;
+  height: 100vh;
+  padding: 120px 200px;
+  background-image: url(../img/logon-bg1.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#writeback-box {
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* 상단 오늘 날짜 */
+.write-today {
+  background-color: #9747FF;
+  height: 50px;
+  line-height: 25px;
+  padding: 15px 15px;
+  color: white;
+  font-family: 'SBAggroB';
+}
+
+/* 글쓰기 박스 */
+.write-box {
+  font-family: 'SBAggroB';
+  width: 100%;
+  display: inline-block;
+  padding: 8px;
+  background-color: white;
+  border-radius: 0px 0px 10px 10px;
+  border: 3px solid #9747FF;
+}
+
+/* 기분이미지 --------------------------------------*/
+.write-box .write-mood {
+  height: 80px;
+  line-height: 74px;
+  background-color: white;
+  border-radius: 10px;
+  border: 3px solid #F2E9FF;
+  font-size: 20px;
+}
+
+.mood-title {
+  float: left;
+  padding: 0px 60px;
+  background-color: #F2E9FF;
+}
+
+.mood-img {
+  margin-left: 65px;
+  width: 65px;
+  height: 65px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+/* 내용 작성 ----------------------------------------------*/
+.write-content {
+  width: 100%;
+  height: 400px;
+  padding: 20px;
+  margin: 5px 0px;
+  border-radius: 10px;
+  border: 3px solid #F2E9FF;
+  font-family: 'KyoboHand';
+  font-size: 20px;
+  resize: none;
+}
+
+.write-content:focus {
+  background-color: #F2E9FF;
+  outline: none;
+}
+
+/* 일기 본문placeholder 값 설정 */
+.write-content::placeholder {
+  font-size: 18px;
+  color: gray;
+}
+
+/* 파일첨부 */
+.write-footer {
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 3px solid #F2E9FF;
+}
+
+.fileBox {
+  font-family: 'NanumSquareNeo-Variable';
+  font-size: 16px;
+  font-weight: bold;
+  color: #9c9c9c;
+}
+
+.write-footer .fileBox::-webkit-file-upload-button {
+  font-family: 'NanumSquareNeo-Variable';
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  height: 40px;
+  padding: 8px 20px;
+  margin-right: 15px;
+  border-radius: 5px;
+  background-color: #9747FF;
+  border: none;
+  cursor: pointer;
+}
+
+/* 작성버튼 */
+.submit-write {
+  width: 100px;
+  height: 35px;
+  vertical-align: middle;
+  border-radius: 50px;
+  transition: all .1s ease;
+  border: none;
+  background-color: #F2E9FF;
+  font-family: 'NanumSquareNeo-Variable';
+  font-weight: bold;
+  font-size: 16px;
+  color: #9747FF;
+  margin: 15px 0px 8px 0px;
+  padding: 5px 15px;
+  float: right;
+  cursor: pointer;
+}
+
+.submit-write::after {
+  display: block;
+  content: '';
+  clear: both;
+}
+
+.submit-write:hover {
+  background-color: #9747FF;
+  border: none;
+  box-shadow: 0px 0px 5px 3px #B38CE7;
+  color: white;
+}
+
+
+/* ------------------------------------------------------------------------------------------ */
+/* 디테일*/
+.detail_container {
+  background-color: #F2E9FF;
+  display: inline-block;
+  width: 75%;
+  height: 100vh;
+  padding: 120px 200px;
+  background-image: url(../img/logon-bg1.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#detail-box {
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* "이름" 출력*/
+.name-box {
+  background-color: #9747FF;
+  width: 100%;
+  height: 50px;
+  line-height: 25px;
+  padding: 15px 10px;
+  color: white;
+  font-family: 'SBAggroB';
+}
+
+/* 목록으로 이동 버튼 */
+.close-btn {
+  float: right;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.close-btn svg {
+  color: white;
+  stroke: currentcolor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  height: 2em;
+  width: 2em;
+}
+
+#homeicon {
+  float: right;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+/* 콘텐츠 컨테이너------------------------------ */
+.contents-container {
+  border-radius: 0px 0px 10px 10px;
+  border: 3px solid #9747FF;
+  background-color: white;
+  width: 100%;
+}
+
+.contents-box {
+  width: 100%;
+  height: 100%;
+}
+
+/* 일기 사진 */
+.diary-img {
+  border: 2px solid #F2E9FF;
+  border-radius: 5px;
+  width: calc(50% - 10px);
+  height: 500px;
+  margin: 5px;
+  float: left;
+  object-fit: cover;
+}
+
+.contents-container::after,
+.contents-box::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+/* 일기 쓴 내용 */
+.diary-box {
+  border: 2px solid #F2E9FF;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 5px;
+  width: calc(50% - 10px);
+  height: 500px;
+  display: inline-block;
+}
+
+/* 날짜, 기분 */
+.diary-header {
+  border-bottom: 2px solid #F2E9FF;
+  padding: 5px 10px 10px 10px;
+  width: 100%;
+  height: 65px;
+  line-height: 65px;
+  font-family: 'SBAggroB';
+}
+
+.diary-header::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+.mood_detail {
+  float: right;
+  width: 50px;
+  height: 50px;
+}
+
+/* 일기 내용 */
+.dairy-Contents {
+  /* background-color: aqua; */
+  width: 100%;
+  height: 400px;
+  margin: 15px 0px;
+  padding: 5px 10px 5px 5px;
+  text-align: justify;
+  /* scroll */
+  line-height: 35px;
+  overflow-y: auto;
+  -webkit-line-clamp: 11;
+  /* 원하는 줄 수를 입력하세요 */
+  background: none;
+  font-family: 'KyoboHand';
+  font-size: 22px;
+  border: none;
+  resize: none;
+  /* textarea 사이즈 조절 막기 */
+}
+
+.dairy-Contents:focus {
+  outline: none;
+  background-color: #F2E9FF;
+}
+
+/* 스크롤바css */
+.dairy-Contents::-webkit-scrollbar {
+  width: 5px;
+  height: 200px;
+}
+
+.dairy-Contents::-webkit-scrollbar-thumb {
+  background-color: #B38CE7;
+  border-radius: 5px;
+  transition: width 0.2s ease-in-out;
+}
+
+.dairy-Contents::-webkit-scrollbar-thumb:hover {
+  background-color: #a5c9fc;
+}
+
+/* 수정 삭제 버튼 */
+.bottom {
+  padding: 5px;
+  margin-bottom: 5px;
+  float: right;
+}
+
+.update-btn,
+.delete-btn {
+  margin-left: 10px;
+  width: 100px;
+  height: 35px;
+  vertical-align: middle;
+  border-radius: 50px;
+  transition: all .1s ease;
+  border: none;
+  background-color: #F2E9FF;
+  font-family: 'NanumSquareNeo-Variable';
+  font-size: 16px;
+  font-weight: bold;
+  color: #9747FF;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+
+.update-btn:hover,
+.delete-btn:hover {
+  background-color: #9747FF;
+  border: none;
+  box-shadow: 0px 0px 5px 3px #B38CE7;
+  color: white;
+}
+
+/* @media (max-width: 1920px) {
+  .write-container {
+    width: 75%;
+  }
+} */
+
+/* alert 커스텀 */
+@font-face {
+  font-family: 'insungitCutelivelyjisu';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/insungitCutelivelyjisu.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.swal2-title {
+  font-family: 'insungitCutelivelyjisu';
+}
+
+.swal2-styled.swal2-confirm,
+.swal2-styled.swal2-cancel {
+  font-family: 'insungitCutelivelyjisu';
+  border-radius: 5em !important;
+  padding: 0px;
+  width: 100px;
+  height: 35px;
+  line-height: 30px;
+}
+
+.swal2-styled.swal2-confirm {
+  background-color: #9747FF !important;
+  border: 3px solid #9747FF !important;
+}
+
+.swal2-styled.swal2-cancel {
+  border: 3px solid #9747FF !important;
+  background-color: #F2E9FF !important;
+  color: #9747FF !important;
+}
+
+.swal2-styled.swal2-confirm:hover,
+.swal2-styled.swal2-cancel:hover {
+  box-shadow: 0px 0px 5px 1px #9747FF;
+
+}
+
+.swal2-popup {
+  width: 630px !important;
+  padding: 40px 0px !important;
+  border-radius: 20px !important;
+  box-shadow: 0px 0px 10px 1px rgb(0, 0, 0, .3);
+  /* background-color: #B38CE7 !important;
+  color: white !important;
+  border-radius: 20px !important;
+  box-shadow: 0px 0px 10px 2px #9747FF; */
+}
+
+.Toastify__toast-body div {
+  font-family: 'insungitCutelivelyjisu';
+}
+
+:root {
+  --toastify-toast-width: 300px;
+  --toastify-toast-min-height: 14px;
+  --toastify-toast-max-height: 50px;
+}
