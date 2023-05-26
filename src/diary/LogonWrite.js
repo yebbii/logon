@@ -164,7 +164,7 @@ const LogonWrite = ({ history }) => {
                             <span>Day{today}</span>
                             <BiHomeHeart id="homeicon" title='메인 화면으로' onClick={handlerGoMain} />
                         </div>
-                        
+
                         <form onSubmit={onSubmit}>
                             <div className="write-box">
                                 <div className="write-mood">

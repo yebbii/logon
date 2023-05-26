@@ -101,7 +101,6 @@
 
 }
 
-
 /* 프로필 이미지 */
 .myProfilImg {
   background-image: url('../img/mood_profil.png');
@@ -272,17 +271,6 @@
   color: black;
 }
 
-/* 
-.writetext {
-  font-family: 'NanumSquareNeo-Variable';
-  font-size: 15px;
-  font-weight: bold;
-  height: 35px;
-  line-height: 40px;
-  margin-left: 10px;
-  display: inline-block;
-} */
-
 /* ------------------------------------------------------------------------------------------ */
 /* 일기쓰기 전체박스*/
 .write-container {
@@ -358,6 +346,21 @@
   font-family: 'KyoboHand';
   font-size: 20px;
   resize: none;
+}
+
+/* 스크롤 css */
+.write-content::-webkit-scrollbar {
+  width: 5px;
+}
+
+.write-content::-webkit-scrollbar-thumb {
+  background-color: #B38CE7;
+  border-radius: 5px;
+  transition: width 0.2s ease-in-out;
+}
+
+.write-content::-webkit-scrollbar-thumb:hover {
+  background-color: #a5c9fc;
 }
 
 .write-content:focus {
@@ -486,6 +489,7 @@
   font-size: 1.5em;
   cursor: pointer;
 }
+
 /* 콘텐츠 컨테이너------------------------------ */
 .contents-container {
   border-radius: 0px 0px 10px 10px;
@@ -552,7 +556,6 @@
 
 /* 일기 내용 */
 .dairy-Contents {
-  /* background-color: aqua; */
   width: 100%;
   height: 400px;
   margin: 15px 0px;
@@ -568,7 +571,6 @@
   font-size: 22px;
   border: none;
   resize: none;
-  /* textarea 사이즈 조절 막기 */
 }
 
 .dairy-Contents:focus {
@@ -579,7 +581,6 @@
 /* 스크롤바css */
 .dairy-Contents::-webkit-scrollbar {
   width: 5px;
-  height: 200px;
 }
 
 .dairy-Contents::-webkit-scrollbar-thumb {
@@ -625,12 +626,6 @@
   color: white;
 }
 
-/* @media (max-width: 1920px) {
-  .write-container {
-    width: 75%;
-  }
-} */
-
 /* alert 커스텀 */
 @font-face {
   font-family: 'insungitCutelivelyjisu';
@@ -675,10 +670,6 @@
   padding: 40px 0px !important;
   border-radius: 20px !important;
   box-shadow: 0px 0px 10px 1px rgb(0, 0, 0, .3);
-  /* background-color: #B38CE7 !important;
-  color: white !important;
-  border-radius: 20px !important;
-  box-shadow: 0px 0px 10px 2px #9747FF; */
 }
 
 .Toastify__toast-body div {
